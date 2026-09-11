@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Environment variables (keep your MongoDB URI private!)
+.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
