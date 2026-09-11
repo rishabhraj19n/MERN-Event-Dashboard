@@ -1,0 +1,398 @@
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background-color: #2c3e50;
+  color: white;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.navbar-brand {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-btn {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+  background-color: rgba(255,255,255,0.2);
+  border-color: white;
+}
+
+/* ===== Main Content ===== */
+.main-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* ===== Page Title ===== */
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  border-bottom: 2px solid #2c3e50;
+  padding-bottom: 8px;
+}
+
+/* ===== Stat Cards ===== */
+.stats-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 20px 28px;
+  flex: 1;
+  min-width: 180px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.stat-card h3 {
+  font-size: 13px;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.stat-card .stat-value {
+  font-size: 36px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.stat-card .stat-label {
+  font-size: 13px;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* ===== Section Header ===== */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.section-header h2 {
+  font-size: 18px;
+  color: #2c3e50;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-primary {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #e74c3c;
+  color: white;
+  padding: 5px 12px;
+  font-size: 13px;
+}
+
+.btn-secondary {
+  background-color: #95a5a6;
+  color: white;
+}
+
+.btn-small {
+  padding: 5px 12px;
+  font-size: 13px;
+}
+
+/* ===== Event Cards Grid ===== */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.event-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 18px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.event-card h3 {
+  font-size: 17px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.event-card .event-info {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.event-card .event-info span {
+  display: block;
+}
+
+.capacity-bar-wrapper {
+  background: #eee;
+  border-radius: 4px;
+  height: 8px;
+  margin-bottom: 6px;
+  overflow: hidden;
+}
+
+.capacity-bar {
+  height: 100%;
+  background-color: #27ae60;
+  border-radius: 4px;
+  transition: width 0.4s;
+}
+
+.capacity-bar.full {
+  background-color: #e74c3c;
+}
+
+.capacity-text {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.event-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* ===== Form ===== */
+.form-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.form-card h3 {
+  font-size: 16px;
+  margin-bottom: 14px;
+  color: #2c3e50;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 160px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #2c3e50;
+}
+
+/* ===== Table ===== */
+.table-wrapper {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+thead {
+  background-color: #2c3e50;
+  color: white;
+}
+
+thead th {
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+tbody tr {
+  border-bottom: 1px solid #eee;
+  transition: background 0.15s;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+tbody td {
+  padding: 11px 16px;
+  color: #444;
+}
+
+/* ===== Back Button Row ===== */
+.back-row {
+  margin-bottom: 16px;
+}
+
+/* ===== Detail Header ===== */
+.detail-header {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.detail-header h2 {
+  font-size: 20px;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.detail-header p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* ===== Empty / Loading ===== */
+.empty-text {
+  text-align: center;
+  color: #aaa;
+  padding: 32px;
+  font-size: 14px;
+}
+
+.loading-text {
+  text-align: center;
+  color: #888;
+  padding: 20px;
+}
+
+.error-text {
+  color: #e74c3c;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+/* ===== Alert ===== */
+.alert {
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.alert-success {
+  background: #eafaf1;
+  border: 1px solid #a9dfbf;
+  color: #1e8449;
+}
+
+.alert-error {
+  background: #fdedec;
+  border: 1px solid #f1948a;
+  color: #c0392b;
+}
+
+/* ===== View All Button ===== */
+.view-all-btn {
+  display: inline-block;
+  margin-top: 16px;
+}
