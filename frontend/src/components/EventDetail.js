@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import AttendeeTable from './AttendeeTable';
 import AddAttendeeForm from './AddAttendeeForm';
+import API from '../api';
 
-const API = 'http://localhost:5000/api';
 
 function EventDetail({ event, onBack }) {
   const [attendees, setAttendees] = useState([]);

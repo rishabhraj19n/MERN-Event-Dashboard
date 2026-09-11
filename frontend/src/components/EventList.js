@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import EventCard from './EventCard';
 import AddEventForm from './AddEventForm';
+import API from '../api';
 
-const API = 'http://localhost:5000/api';
 
 function EventList({ onSelectEvent }) {
   const [events, setEvents] = useState([]);
