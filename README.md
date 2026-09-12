@@ -15,11 +15,11 @@
 
 ##  Features
 
-- 📊 **Real-time Metrics Dashboard**: View total events, total attendee count, and the most popular event at a glance.
-- 📅 **Dynamic Event Management**: Add new technical events with date, venue, capacity limits, and descriptions.
-- 👥 **Attendee Registration & Capacity Tracking**: Register attendees with live capacity checks and instant visual indicators (progress bar turns red when full).
-- 🗑️ **Management & Deletion**: Delete events and remove attendee registrations with seamless state updates.
-- ⚡ **Dual Data Layer**: Works with Node.js/Express REST APIs and includes an automatic client fallback for instant cloud demo.
+-  **Real-time Metrics Dashboard**: View total events, total attendee count, and the most popular event at a glance.
+-  **Dynamic Event Management**: Add new technical events with date, venue, capacity limits, and descriptions.
+-  **Attendee Registration & Capacity Tracking**: Register attendees with live capacity checks and instant visual indicators (progress bar turns red when full).
+-  **Management & Deletion**: Delete events and remove attendee registrations with seamless state updates.
+-  **Dual Data Layer**: Works with Node.js/Express REST APIs and includes an automatic client fallback for instant cloud demo.
 
 ---
 
