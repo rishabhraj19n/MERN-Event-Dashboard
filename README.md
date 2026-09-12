@@ -1,4 +1,4 @@
-# 📋 Technical Event Dashboard — MERN Stack
+# Technical Event Dashboard — MERN Stack
 
 > A responsive, full-stack Event Management Dashboard designed for society administrators to manage technical events, monitor registrations in real-time, and track attendee metrics.
 
