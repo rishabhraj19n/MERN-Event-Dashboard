@@ -13,7 +13,7 @@
 
 ---
 
-## ✨ Features
+##  Features
 
 - 📊 **Real-time Metrics Dashboard**: View total events, total attendee count, and the most popular event at a glance.
 - 📅 **Dynamic Event Management**: Add new technical events with date, venue, capacity limits, and descriptions.
@@ -100,5 +100,4 @@ The app will automatically open at `http://localhost:3000`.
 
 ---
 
-## 👤 Author
-- **Rishabh Raj** - [GitHub Profile](https://github.com/rishabhraj19n)
+
