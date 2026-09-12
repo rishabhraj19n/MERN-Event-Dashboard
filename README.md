@@ -86,7 +86,7 @@ The app will automatically open at `http://localhost:3000`.
 
 ---
 
-## 📡 REST API Reference
+##  REST API Reference
 
 | Method | Endpoint | Description |
 |---|---|---|
