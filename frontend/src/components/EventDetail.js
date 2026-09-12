@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import AttendeeTable from './AttendeeTable';
 import AddAttendeeForm from './AddAttendeeForm';
-import API from '../api';
-
+import { eventService } from '../api';
 
 function EventDetail({ event, onBack }) {
   const [attendees, setAttendees] = useState([]);
@@ -14,8 +12,8 @@ function EventDetail({ event, onBack }) {
   const fetchAttendees = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(`${API}/attendees?eventId=${event._id}`);
-      setAttendees(res.data);
+      const data = await eventService.getAttendees(event._id);
+      setAttendees(data);
     } catch (err) {
       console.error('Failed to load attendees:', err.message);
     } finally {
@@ -34,20 +32,20 @@ function EventDetail({ event, onBack }) {
       return;
     }
     try {
-      await axios.post(`${API}/attendees`, { ...formData, eventId: event._id });
+      await eventService.createAttendee({ ...formData, eventId: event._id });
       setMessage('Attendee registered successfully!');
       setShowForm(false);
       fetchAttendees();
       setTimeout(() => setMessage(''), 3000);
     } catch (err) {
-      setMessage('Error: ' + (err.response?.data?.message || err.message));
+      setMessage('Error: ' + (err.message || 'Failed to register attendee'));
     }
   };
 
   const handleDeleteAttendee = async (id) => {
     if (!window.confirm('Remove this attendee?')) return;
     try {
-      await axios.delete(`${API}/attendees/${id}`);
+      await eventService.deleteAttendee(id);
       setMessage('Attendee removed.');
       fetchAttendees();
       setTimeout(() => setMessage(''), 3000);

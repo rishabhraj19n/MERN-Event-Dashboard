@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import EventCard from './EventCard';
 import AddEventForm from './AddEventForm';
-import API from '../api';
-
+import { eventService } from '../api';
 
 function EventList({ onSelectEvent }) {
   const [events, setEvents] = useState([]);
@@ -15,16 +13,15 @@ function EventList({ onSelectEvent }) {
   const fetchEvents = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(`${API}/events`);
-      const evts = res.data;
+      const evts = await eventService.getEvents();
       setEvents(evts);
 
       // Fetch attendee counts for all events
       const counts = {};
       await Promise.all(
         evts.map(async (e) => {
-          const r = await axios.get(`${API}/attendees?eventId=${e._id}`);
-          counts[e._id] = r.data.length;
+          const r = await eventService.getAttendees(e._id);
+          counts[e._id] = r.length;
         })
       );
       setAttendeeCounts(counts);
@@ -41,20 +38,20 @@ function EventList({ onSelectEvent }) {
 
   const handleAddEvent = async (formData) => {
     try {
-      await axios.post(`${API}/events`, formData);
+      await eventService.createEvent(formData);
       setMessage('Event added successfully!');
       setShowForm(false);
       fetchEvents();
       setTimeout(() => setMessage(''), 3000);
     } catch (err) {
-      setMessage('Error: ' + (err.response?.data?.message || err.message));
+      setMessage('Error: ' + (err.message || 'Failed to create event'));
     }
   };
 
   const handleDelete = async (id) => {
     if (!window.confirm('Delete this event and all its registrations?')) return;
     try {
-      await axios.delete(`${API}/events/${id}`);
+      await eventService.deleteEvent(id);
       setMessage('Event deleted.');
       fetchEvents();
       setTimeout(() => setMessage(''), 3000);

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import API from '../api';
-
+import { eventService } from '../api';
 
 function Dashboard({ onViewEvents }) {
   const [stats, setStats] = useState({
@@ -15,17 +13,17 @@ function Dashboard({ onViewEvents }) {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const eventsRes = await axios.get(`${API}/events`);
-        const events = eventsRes.data;
+        const events = await eventService.getEvents();
 
         // For each event, fetch attendee count
         const attendeeCounts = await Promise.all(
-          events.map((e) =>
-            axios.get(`${API}/attendees?eventId=${e._id}`).then((r) => ({
+          events.map(async (e) => {
+            const atts = await eventService.getAttendees(e._id);
+            return {
               name: e.name,
-              count: r.data.length,
-            }))
-          )
+              count: atts.length,
+            };
+          })
         );
 
         const totalAttendees = attendeeCounts.reduce((sum, e) => sum + e.count, 0);
