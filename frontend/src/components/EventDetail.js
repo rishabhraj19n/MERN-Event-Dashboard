@@ -21,6 +21,7 @@ function EventDetail({ event, onBack }) {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     fetchAttendees();
   }, [event._id]);
