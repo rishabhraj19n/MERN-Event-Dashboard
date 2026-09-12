@@ -7,7 +7,7 @@
 ## 🔗 Live Demo
 
 👉 **[Click Here to Open Live Dashboard: https://mern-event-dashboard.vercel.app](https://mern-event-dashboard.vercel.app/)**  
-     Works instantly on desktop and mobile - no setup required.
+     > Works instantly on desktop and mobile - no setup required.
 
 
 
